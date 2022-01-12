@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const clans_routes_1 = require("./routes/clans.routes");
+const locations_routes_1 = require("./routes/locations.routes");
+const cards_routes_1 = require("./routes/cards.routes");
+const players_routes_1 = require("./routes/players.routes");
+const tournaments_routes_1 = require("./routes/tournaments.routes");
+const globaltournaments_routes_1 = require("./routes/globaltournaments.routes");
+const app = (0, express_1.default)();
+app.use(clans_routes_1.routes);
+app.use(locations_routes_1.routes);
+app.use(cards_routes_1.routes);
+app.use(players_routes_1.routes);
+app.use(tournaments_routes_1.routes);
+app.use(globaltournaments_routes_1.routes);
+app.listen(3333);
